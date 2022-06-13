@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "kyugenericextensions",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kyuuuyki/KyuGenericExtensions.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "75ff448ee431f3eb6ae71f4e6866a9e1097eb6b0"
+      }
+    }
+  ],
+  "version" : 2
+}
