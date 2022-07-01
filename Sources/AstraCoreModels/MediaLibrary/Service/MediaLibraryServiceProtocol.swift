@@ -4,8 +4,9 @@
 //
 
 import Foundation
+import KyuGenericExtensions
 
-public protocol MediaLibraryServiceProtocol {
+public protocol MediaLibraryServiceProtocol: ModuleProtocol {
 	func astromonyPictureOfTheDay(
 		date: Date,
 		completion: @escaping (Result<MediaLibraryAPODItemProtocol?, Error>) -> Void

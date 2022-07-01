@@ -4,9 +4,14 @@
 //
 
 import Foundation
+import KyuGenericExtensions
+import UIKit
 
-public protocol AuthenticationServiceProtocol {
+public protocol AuthenticationServiceProtocol: ModuleProtocol {
 	func sessionStatus(completion: @escaping (AuthenticationSessionStatusType) -> Void)
-	func signIn(apiKey: String, completion: @escaping (Result<Bool, Error>) -> Void)
+	func signInWithGoogle(
+		presenting: UIViewController,
+		completion: @escaping (Result<AuthenticationSessionStatusType, Error>) -> Void
+	)
 	func signOut(completion: @escaping () -> Void)
 }

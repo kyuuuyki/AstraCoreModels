@@ -6,5 +6,5 @@
 import Foundation
 
 public enum KeychainKeyType: String {
-	case apiKey
+	case dataGovAPIKey
 }
