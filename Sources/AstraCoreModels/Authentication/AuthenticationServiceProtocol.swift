@@ -8,10 +8,12 @@ import KyuGenericExtensions
 import UIKit
 
 public protocol AuthenticationServiceProtocol: ModuleProtocol {
-	func sessionStatus(completion: @escaping (AuthenticationSessionStatusType) -> Void)
+	func getSessionStatus(completion: @escaping (AuthenticationSessionStatusType) -> Void)
 	func signInWithGoogle(
 		presenting: UIViewController,
-		completion: @escaping (Result<AuthenticationSessionStatusType, Error>) -> Void
+		completion: @escaping (
+			Result<AuthenticationSessionStatusType, Error>
+		) -> Void
 	)
 	func signOut(completion: @escaping () -> Void)
 }

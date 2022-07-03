@@ -7,26 +7,44 @@ import Foundation
 import KyuGenericExtensions
 
 public protocol MediaLibraryServiceProtocol: ModuleProtocol {
-	func astromonyPictureOfTheDay(
+	func getAPOD(
 		date: Date,
-		completion: @escaping (Result<MediaLibraryAPODItemProtocol?, Error>) -> Void
+		completion: @escaping (
+			Result<MediaLibraryAPODItemProtocol, Error>
+		) -> Void
 	)
-	func astromonyPictureOfTheDay(
+	func getAPODList(
 		count: Int,
-		completion: @escaping (Result<[MediaLibraryAPODItemProtocol], Error>) -> Void
+		completion: @escaping (
+			Result<[MediaLibraryAPODItemProtocol], Error>
+		) -> Void
 	)
-	func suggestedCategories(
-		completion: @escaping (Result<[MediaLibraryCategoryProtocol], Error>) -> Void
+	func getSuggestedCategoryList(
+		completion: @escaping (
+			Result<[MediaLibraryCategoryProtocol], Error>
+		) -> Void
 	)
-	func recent(completion: @escaping (Result<[MediaLibraryItemProtocol], Error>) -> Void)
-	func popular(completion: @escaping (Result<[MediaLibraryItemProtocol], Error>) -> Void)
-	func search(
+	func getRecentMediaList(
+		completion: @escaping (
+			Result<[MediaLibraryItemProtocol], Error>
+		) -> Void
+	)
+	func getPopularMediaList(
+		completion: @escaping (
+			Result<[MediaLibraryItemProtocol], Error>
+		) -> Void
+	)
+	func getMediaListByKeyword(
 		keyword: String,
 		page: Int?,
-		completion: @escaping (Result<[MediaLibraryItemProtocol], Error>) -> Void
+		completion: @escaping (
+			Result<[MediaLibraryItemProtocol], Error>
+		) -> Void
 	)
-	func asset(
+	func getAssetListByMediaId(
 		id: String,
-		completion: @escaping (Result<[MediaLibraryAssetItemProtocol], Error>) -> Void
+		completion: @escaping (
+			Result<[MediaLibraryAssetItemProtocol], Error>
+		) -> Void
 	)
 }
