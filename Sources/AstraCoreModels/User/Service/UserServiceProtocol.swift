@@ -7,19 +7,28 @@ import Foundation
 import KyuGenericExtensions
 
 public protocol UserServiceProtocol: ModuleProtocol {
-	func addUser(
+	func setUser(
 		user: UserProtocol,
-		userSecret: UserSecretProtocol,
 		completion: @escaping (Result<UserProtocol, Error>) -> Void
 	)
 	func getUser(
-		by userId: String,
+		by userID: String,
 		completion: @escaping (Result<UserProtocol, Error>) -> Void
 	)
+	func deleteUser(
+		by userID: String,
+		completion: @escaping (Result<Void, Error>) -> Void
+	)
+	func setUserSecret(
+		userSecret: UserSecretProtocol,
+		completion: @escaping (Result<UserSecretProtocol, Error>) -> Void
+	)
 	func getUserSecret(
-		by userId: String,
-		completion: @escaping (
-			Result<UserSecretProtocol, Error>
-		) -> Void
+		by userID: String,
+		completion: @escaping (Result<UserSecretProtocol, Error>) -> Void
+	)
+	func deleteUserSecret(
+		by userID: String,
+		completion: @escaping (Result<Void, Error>) -> Void
 	)
 }

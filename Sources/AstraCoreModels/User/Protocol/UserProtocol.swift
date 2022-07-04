@@ -10,4 +10,5 @@ public protocol UserProtocol {
 	var displayName: String? { get }
 	var email: String? { get }
 	var imageUrl: URL? { get }
+	var provider: AuthenticationProviderType { get }
 }

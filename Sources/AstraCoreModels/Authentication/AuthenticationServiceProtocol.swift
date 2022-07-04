@@ -9,17 +9,19 @@ import UIKit
 
 public protocol AuthenticationServiceProtocol: ModuleProtocol {
 	func getSessionStatus(completion: @escaping (AuthenticationSessionStatusType) -> Void)
-	func signInWithFacebook(
+	func signIn(
+		provider: AuthenticationProviderType,
 		presenting: UIViewController,
-		completion: @escaping (
-			Result<AuthenticationSessionStatusType, Error>
-		) -> Void
-	)
-	func signInWithGoogle(
-		presenting: UIViewController,
-		completion: @escaping (
-			Result<AuthenticationSessionStatusType, Error>
-		) -> Void
+		completion: @escaping (Result<Void, Error>) -> Void
 	)
 	func signOut(completion: @escaping () -> Void)
+	func register(
+		user: UserProtocol,
+		userSecret: UserSecretProtocol,
+		completion: @escaping (Result<Void, Error>) -> Void
+	)
+	func unregister(
+		presenting: UIViewController,
+		completion: @escaping (Result<Void, Error>) -> Void
+	)
 }
